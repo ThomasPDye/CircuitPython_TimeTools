@@ -36,6 +36,6 @@ def struct_time_equivalent(time_a: time.struct_time, time_b: time.struct_time):
     """compare time_a and time_b for equivalence taking into account unknowns"""
     for i in range(len(time.struct_time)):
         member_a, member_b = time_a[i], time_b[i]
-        if member_a != member_b and (member_a != -1 or member_b != -1):
+        if member_a != member_b and member_a != -1 and member_b != -1:
             return False
     return True
