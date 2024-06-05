@@ -31,6 +31,8 @@ This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
 
+* `Adafruit's NTP library <https://github.com/adafruit/Adafruit_CircuitPython_NTP>`_
+
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
 `the Adafruit library and driver bundle <https://circuitpython.org/libraries>`_

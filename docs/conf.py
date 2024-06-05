@@ -23,7 +23,7 @@ extensions = [
     "sphinx.ext.todo",
 ]
 
-autodoc_mock_imports = ["rtc"]
+autodoc_mock_imports = ["rtc", "socketpool", "wifi"]
 
 autodoc_preserve_defaults = True
 

@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: Unlicense
 
+import time
+
 from rtc import RTC
 from socketpool import SocketPool
 import wifi
@@ -15,7 +17,8 @@ pool = SocketPool(wifi.radio)
 ntp = NTP(pool, tz_offset=0)
 rtc = RTC()
 
-if struct_time_equivalent(ntp.datetime, rtc.datetime):
-    print("RTC in sync with NTP")
-else:
-    print("RTC not in sync with NTP")
+while True:
+    if not struct_time_equivalent(rtc.datetime, ntp.datetime):
+        rtc.datetime = ntp.datetime
+        print("Updating RTC")
+    time.sleep(1)
